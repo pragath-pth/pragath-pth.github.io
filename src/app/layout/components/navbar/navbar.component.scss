@@ -1,0 +1,94 @@
+.navbar{
+    z-index: 999;
+    box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
+    .container{
+        .my-logo{
+            width: 50px;
+            fill: #303a52;
+        }
+        .navigation{
+            display: flex;
+            align-items: center;
+            .switch {
+                /* --moon-mask: ; */
+                 font-size: 12px;
+                 position: relative;
+                 display: inline-block;
+                 width: 3.5em;
+                 height: 2em;
+            }
+                
+            /* Hide default HTML checkbox */
+            .switch input {
+                 opacity: 0;
+                 width: 0;
+                 height: 0;
+            }
+            
+            /* The slider */
+            .slider {
+                 position: absolute;
+                 cursor: pointer;
+                 top: 0;
+                 left: 0;
+                 right: 0;
+                 bottom: 0;
+                //  background-color: #f4f4f5;
+                 background-color: #e6e6ef;
+                 transition: .4s;
+                 border-radius: 30px;
+            }
+            
+            .slider:before {
+                 position: absolute;
+                 content: "";
+                 height: 1.4em;
+                 width: 1.4em;
+                 border-radius: 20px;
+                 left: 0.3em;
+                 bottom: 0.3em;
+                 background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+                 ;
+                 transition: .4s;
+            }
+            
+            input:checked + .slider {
+                //  background-color: #303136;
+                 background-color: #33353a;
+            }
+            
+            input:checked + .slider:before {
+                 transform: translateX(1.5em);
+                 background: #303136;
+                 box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -5px 0 0 #a3dafb;
+            }
+        }
+        .nav{
+            .nav-link{
+                font-weight: 700;
+            }
+        }
+    }
+    .active-tab{
+        color:rgb(0, 7, 102);
+    }
+}
+
+.dark-mode{
+    background: #242526;
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+    .container{
+        .my-logo{
+            // fill: white;
+            fill: #77d990;
+        }
+        .nav{
+            .nav-link{
+                color:#77d990;
+            }
+        }
+    }
+    .active-tab{
+        color: #2aaf4c !important;
+    }
+}

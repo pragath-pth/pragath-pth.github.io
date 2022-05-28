@@ -1,0 +1,81 @@
+<div class="about-container" [ngClass]="{'dark-mode' : isDarkMode}">
+    <div class="content-container">
+      <div class="content-header">
+        <div class="circle">
+          <span class="red box"></span>
+        </div>
+        <div class="circle">
+          <span class="yellow box"></span>
+        </div>
+        <div class="circle">
+          <span class="green box"></span>
+        </div>
+      </div>
+      <div class="content-body">
+        <div class="description">
+            <h3>About </h3>
+            <div class="short-desc">
+              <div class="qstn">
+                <h5>WHO &nbsp; </h5>
+                <h5>WHAT &nbsp; </h5>
+                <h5>WHERE &nbsp; </h5>
+                <h5>WHEN &nbsp; </h5>
+                <h5>WHY &nbsp; </h5>
+              </div>
+              <div class="seperator">
+                <h5 *ngFor="let number of [0,1,2,3,4]"> | &nbsp;</h5>
+              </div>
+              <div class="answer">
+                <h5> &nbsp;
+                  <span> PRAGATH G </span>
+                </h5>
+                <h5> &nbsp;
+                  <span> FRONT END DEVELOPER </span>
+                </h5>
+                <h5> &nbsp;
+                  <span> KOLLAM, KERALA </span>
+                </h5>
+                <h5> &nbsp;
+                  <span> 2021 - PRESENT &nbsp; | &nbsp; {{whenCount}} </span>
+                </h5>
+                <h5> &nbsp;
+                  <span> PASSION </span>
+                </h5>
+              </div>
+            </div>
+        </div>
+        <div class="description">
+          <h3>Interests </h3>
+          <div class="short-desc">
+            <div class="qstn">
+              <h5>CODING &nbsp; </h5>
+              <h5>MUSIC &nbsp; </h5>
+              <h5>TECHNOLOGY &nbsp; </h5>
+              <h5>TRAVEL &nbsp; </h5>
+              <h5>EDITING &nbsp; </h5>
+            </div>
+            <div class="seperator">
+              <h5 *ngFor="let number of [0,1,2,3,4]"> | &nbsp;</h5>
+            </div>
+            <div class="answer">
+              <h5> &nbsp;
+                <span> ANGULAR, FLUTTER </span>
+              </h5>
+              <h5> &nbsp;
+                <span> HI-RES | WAV, FLAC </span>
+              </h5>
+              <h5> &nbsp;
+                <span> PC | MOBILE | HARDWARE | SOFTWARE </span>
+              </h5>
+              <h5> &nbsp;
+                <span> CAR | TRAIN </span>
+              </h5>
+              <h5> &nbsp;
+                <span> AUDIO | VIDEO | PHOTO </span>
+              </h5>
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+</div>

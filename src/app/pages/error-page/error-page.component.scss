@@ -1,0 +1,12 @@
+.container{
+    height: 90vh;
+    .btn-primary{
+        border-color: #7367f0!important;
+        background-color: #7367f0!important;
+        color: #fff!important;
+        font-weight: 500;
+    }
+    .btn-primary:hover{
+        box-shadow: 0 8px 25px -8px #7367f0;
+    }
+}

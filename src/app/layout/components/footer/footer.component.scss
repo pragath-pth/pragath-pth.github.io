@@ -1,0 +1,23 @@
+.footer{
+    height: 60px;
+    .copyright{
+        font-size: 15px;
+        font-weight: 600;
+        color: gray;
+    }
+    .name{
+        color:#7367f0;
+        font-weight: 700;
+        a{
+            color: unset;
+            text-decoration: none;
+        }
+    }
+}
+
+.dark-mode{
+    background: #18191A;
+    .name{
+        color: #2aaf4c;
+    }
+}
