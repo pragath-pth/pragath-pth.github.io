@@ -68,6 +68,9 @@
                 font-weight: 700;
             }
         }
+        .nav-mobile{
+            display: none;
+        }
     }
     .active-tab{
         color:rgb(0, 7, 102);
@@ -90,5 +93,41 @@
     }
     .active-tab{
         color: #2aaf4c !important;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .navbar{
+        .container{
+            .nav{
+                display: none;
+            }
+            .nav-mobile{
+                display: flex;
+                margin-bottom: 0px;
+                list-style: none;
+                padding-left: 0px;
+                margin-right: 1rem;
+                .nav-link{
+                    padding: 0.7rem;
+                    color: #4f4dd1;
+                }
+                .nav-link:hover, .active-tab{
+                    color: #0300ab ;
+                }
+            }
+        }
+    }
+    .dark-mode{
+        .container{
+            .nav-mobile{
+                .nav-link{
+                    color:#77d990;
+                }
+                .nav-link:hover, .active-tab{
+                    color: #2aaf4c !important;
+                }
+            }
+        }
     }
 }

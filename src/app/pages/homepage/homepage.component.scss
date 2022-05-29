@@ -13,7 +13,7 @@
             border: 2px solid rgba(255, 255, 255, 0.1);
             width: 200px;
             height: 400px;
-            margin: 0px 10px;
+            margin: 0px 10px 0px 0px;
             overflow: hidden;
             img{
                 width: 272px;
@@ -139,6 +139,36 @@
                 }
                 h5{
                     color: #c5c5c5;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .homepage{
+        .container{
+            .img-container{
+                img{
+                    width: 250px;
+                    right: -66px;
+                }
+            }
+            .content-container{
+                .main{
+                    margin-left: 20px !important;
+                    h3{
+                        font-size: 2rem;
+                    }
+                    h5{
+                        font-size: 1rem;
+                    }
+                    .description{
+                        margin-right: 10px;
+                        p{
+                            font-size: 15px;
+                        }
+                    }
                 }
             }
         }
