@@ -34,7 +34,7 @@ export class HomepageComponent implements OnInit {
 
     this.subscription = this.appService.myMethod$.subscribe((res) => {
       this.isDarkMode = res;
-      console.log(this.isDarkMode);
+      // console.log(this.isDarkMode);
     });
   }
 
