@@ -1,26 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faFile } from '@fortawesome/free-regular-svg-icons';
-import { faFileInvoice } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { AppService } from 'src/app/app.service';
+import { faEnvelope, faMobileScreen, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import * as AOS from 'aos';
-
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss']
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss']
 })
-export class HomepageComponent implements OnInit {
+export class ContactComponent implements OnInit {
 
-  faGithub = faGithub;
-  faLinkedin = faLinkedin;
-  faFile = faFile;
-  faFileInvoice = faFileInvoice;
   isDarkMode: any;
   valueFromLS: any;
   subscription!: Subscription;
+  faEnvelope = faEnvelope;
+  faInstagram = faInstagram;
+  faMobileScreen= faMobileScreen;
+  faPaperPlane = faPaperPlane;
+  contactForm: FormGroup = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    phone: new FormControl(''),
+    message: new FormControl(''),
+  });
 
   constructor(private appService: AppService) { }
 
@@ -36,7 +41,6 @@ export class HomepageComponent implements OnInit {
 
     this.subscription = this.appService.myMethod$.subscribe((res) => {
       this.isDarkMode = res;
-      // console.log(this.isDarkMode);
     });
   }
 
@@ -44,4 +48,7 @@ export class HomepageComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
+  sendData(){
+
+  }
 }

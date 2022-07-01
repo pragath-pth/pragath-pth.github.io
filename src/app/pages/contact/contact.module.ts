@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutComponent } from './about.component';
+import { ContactComponent } from './contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TimelineModule } from "primeng/timeline";
-import { CardModule } from "primeng/card";
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 
 @NgModule({
   declarations: [
-    AboutComponent
+    ContactComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    TimelineModule,
-    CardModule
+    InputTextModule,
+    InputTextareaModule
   ]
 })
-export class AboutModule { }
+export class ContactModule { }

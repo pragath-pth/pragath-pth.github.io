@@ -1,0 +1,232 @@
+.about-container{
+    height: 86.6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .content-container{
+        background: rgba(255, 255, 255, 0.14);
+        border-radius: 10px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.6px);
+        -webkit-backdrop-filter: blur(9.6px);
+        // border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        width: 840px;
+        height: 580px;
+    }
+    .content-header {
+        display: flex;
+        padding: 9px;
+        justify-content: flex-end;
+        .circle {
+            padding: 0 4px;
+        }
+        .box {
+         display: inline-block;
+         align-items: center;
+         width: 10px;
+         height: 10px;
+         padding: 1px;
+         border-radius: 50%;
+        }
+        
+        .red {
+         background-color: #ff605c;
+        }
+        
+        .yellow {
+         background-color: #ffbd44;
+        }
+        
+        .green {
+         background-color: #00ca4e;
+        }
+    }
+    .content-body{
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        .description{
+            flex: 0 0 45%;
+            padding: 0px 10px;
+            h4{
+                margin-bottom: 2rem;
+            }
+            .contact-item{
+                display: flex;
+                align-items: baseline;
+                margin: 18px 0px;
+                // border: 1px solid grey;
+                padding: 15px;
+                width: 90%;
+                border-radius: 5px;
+                box-shadow: rgba(115 103 240 / 20%) 1.95px 1.95px 2.6px;
+                .contact-icon{
+                    flex: 0 0 10%;
+                    fa-icon{
+                        color: #7367f0;
+                    }
+                    .faMobileScreen{
+                        margin-left: 2px;
+                    }
+                    .faInstagram{
+                        margin-left: 1px;
+                    }
+                }
+                h5{
+                    margin-bottom: 0px;
+                    margin-left: 15px;
+                    font-size: 1.1rem;
+                    color: #6c5dff;
+                    font-weight: 600;
+                }
+            }
+            .contact-item:hover{
+                box-shadow: 0 1px 15px -8px #7367f0;
+            }
+        }
+        .contact-form{
+            flex: 0 0 50%;
+            padding-left: 15px;
+            h4{
+                margin-bottom: 2rem;
+            }
+            button{
+                border-color: #7367f0 !important;
+                background-color: #7367f0 !important;
+                color: #fff !important;
+                font-weight: 700;
+                font-size: 14px;
+                margin-top: 10px;
+            }
+            button:focus{
+                box-shadow: none;
+            }
+            button:hover{
+                box-shadow: 0 8px 25px -8px #7367f0;
+            }
+            .form-group{
+                margin-top: 15px;
+                input, textarea{
+                    width: 18rem;
+                }
+                input{
+                    height: 2.4rem;
+                }
+            }
+        }
+    }
+}
+
+.dark-mode{
+    background-color: #18191A;
+    .content-container{
+        background: #242526;
+        color: white;
+    }
+    .content-body{
+        .description{
+            h4{
+                color: #838383;
+            }
+            .contact-item{
+                box-shadow: rgb(41 164 72 / 50%) 1.95px 1.95px 2.6px;
+                .contact-icon{
+                    fa-icon{
+                        color: #838383;
+                    }
+                }
+                h5{
+                    color: #cacaca;
+                }
+            }
+            .contact-item:hover{
+                box-shadow: 0 1px 15px -8px #2aaf4c;
+            }
+        }
+        .contact-form{
+            h4{
+                color: #838383;
+            }
+            .form-group{
+                h5{
+                    color: #c0c0c0;
+                }
+                input, textarea{
+                    border: 1px solid #4a4a4a;
+                    background-color: #242526;
+                    color: lightgray
+                }
+                input:focus, textarea:focus{
+                    box-shadow: none;
+                }
+                input:hover, textarea:hover{
+                    border: 1px solid #2aaf4c;
+                }
+            }
+            button{
+                background: #198754 !important;
+                border-color: #198754 !important;
+            }
+            button:hover{
+                box-shadow: 0 8px 25px -8px #2aaf4c;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .about-container{
+        .content-container{
+            margin: 0.8rem !important;
+
+        }
+    }
+}
+
+@media screen and (max-width: 940px){
+    .about-container{
+        .content-container{
+            width: 550px;
+            height: 700px;
+            .content-body{
+                display: block;
+                overflow: auto;
+                .description{
+                    margin-bottom: 2rem;
+                    h4{
+                        margin-bottom: 1rem;
+                    }
+                    .contact-item{
+                        width: 60%;
+                    }
+                }
+                .contact-form{
+                    h4{
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 590px){
+    .about-container{
+        .content-container{
+            width: 360px;
+            .content-body{
+                .description{
+                    .contact-item{
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+}
+

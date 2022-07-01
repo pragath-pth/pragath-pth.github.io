@@ -1,81 +1,78 @@
 <div class="about-container" [ngClass]="{'dark-mode' : isDarkMode}">
-    <div class="content-container">
-      <div class="content-header">
-        <div class="circle">
-          <span class="red box"></span>
-        </div>
-        <div class="circle">
-          <span class="yellow box"></span>
-        </div>
-        <div class="circle">
-          <span class="green box"></span>
-        </div>
-      </div>
-      <div class="content-body">
-        <div class="description">
-            <h3>About </h3>
-            <div class="short-desc">
-              <div class="qstn">
-                <h5>WHO &nbsp; </h5>
-                <h5>WHAT &nbsp; </h5>
-                <h5>WHERE &nbsp; </h5>
-                <h5>WHEN &nbsp; </h5>
-                <h5>WHY &nbsp; </h5>
-              </div>
-              <div class="seperator">
-                <h5 *ngFor="let number of [0,1,2,3,4]"> | &nbsp;</h5>
-              </div>
-              <div class="answer">
-                <h5> &nbsp;
-                  <span> PRAGATH G </span>
-                </h5>
-                <h5> &nbsp;
-                  <span> FRONT END DEVELOPER </span>
-                </h5>
-                <h5> &nbsp;
-                  <span> KOLLAM, KERALA </span>
-                </h5>
-                <h5> &nbsp;
-                  <span> 2021 - PRESENT &nbsp; | &nbsp; {{whenCount}} </span>
-                </h5>
-                <h5> &nbsp;
-                  <span> PASSION </span>
-                </h5>
-              </div>
-            </div>
-        </div>
-        <div class="description">
-          <h3>Interests </h3>
-          <div class="short-desc">
-            <div class="qstn">
-              <h5>CODING &nbsp; </h5>
-              <h5>MUSIC &nbsp; </h5>
-              <h5>TECHNOLOGY &nbsp; </h5>
-              <h5>TRAVEL &nbsp; </h5>
-              <h5>EDITING &nbsp; </h5>
-            </div>
-            <div class="seperator">
-              <h5 *ngFor="let number of [0,1,2,3,4]"> | &nbsp;</h5>
-            </div>
-            <div class="answer">
-              <h5> &nbsp;
-                <span> ANGULAR, FLUTTER </span>
-              </h5>
-              <h5> &nbsp;
-                <span> HI-RES | WAV, FLAC </span>
-              </h5>
-              <h5> &nbsp;
-                <span> PC | MOBILE | HARDWARE | SOFTWARE </span>
-              </h5>
-              <h5> &nbsp;
-                <span> CAR | TRAIN </span>
-              </h5>
-              <h5> &nbsp;
-                <span> AUDIO | VIDEO | PHOTO </span>
-              </h5>
-            </div>
+  <div class="content-container">
+    <div class="row" data-aos="fade-in" data-aos-easing="ease-in-out" data-aos-duration="800">
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 my-3">
+        <div class="item fast-transition">
+          <div class="item-head">
+            <h5 class="mb-0">WHO</h5>
+            <fa-icon [icon]="faUser"></fa-icon>
           </div>
+          <div class="item-data">
+            <pre class="mb-2">{{who}}</pre>
+          </div>
+        </div>
       </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 my-3">
+        <div class="item fast-transition">
+          <div class="item-head">
+            <h5 class="mb-0">WHAT</h5>
+            <fa-icon [icon]="faCode"></fa-icon>
+          </div>
+          <div class="item-data">
+            <pre class="mb-2">{{what}}</pre>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 my-3">
+        <div class="item fast-transition">
+          <div class="item-head">
+            <h5 class="mb-0">WHERE</h5>
+            <fa-icon [icon]="faLocationCrosshairs"></fa-icon>
+          </div>
+          <div class="item-data">
+            <pre class="mb-2">{{where}}</pre>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 my-3">
+        <div class="item fast-transition">
+          <div class="item-head">
+            <h5 class="mb-0">WHEN</h5>
+            <fa-icon [icon]="faClock"></fa-icon>
+          </div>
+          <div class="item-data">
+            <pre class="mb-2">{{when}}</pre>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 my-3">
+        <div class="item fast-transition">
+          <div class="item-head">
+            <h5 class="mb-0">WHY</h5>
+            <fa-icon [icon]="faComputer"></fa-icon>
+          </div>
+          <div class="item-data">
+            <pre class="mb-2">{{why}}</pre>
+          </div>
+        </div>
       </div>
     </div>
+    <h4 class="text-center mb-4 timeline-heading">My Timeline</h4>
+    <div class="timeline" data-aos="fade-in" data-aos-easing="ease-in-out" data-aos-duration="1000">
+      <p-timeline [value]="timelineData" align="alternate" styleClass="customized-timeline">
+        <ng-template pTemplate="marker" let-data>
+          <span class="custom-marker p-shadow-2" [style.backgroundColor]="isDarkMode ? '#242526' : '#7367f0'">
+            <fa-icon [icon]="data.icon"></fa-icon>
+          </span>
+        </ng-template>
+        <ng-template pTemplate="content" let-data>
+          <div class="card">
+            <h4 class="mx-1">{{data.qualification}}</h4>
+            <h5 class="mx-1">{{data.at}}</h5>
+            <h6 class="mx-1">{{data.duration}}</h6>
+          </div>
+        </ng-template>
+      </p-timeline>
+    </div>
+  </div>
 </div>

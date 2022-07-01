@@ -1,0 +1,60 @@
+<div class="about-container" [ngClass]="{'dark-mode' : isDarkMode}">
+    <h1>Contact Me</h1>
+    <div class="content-container" data-aos="fade-right" data-aos-duration="1000">
+      <div class="content-header">
+        <div class="circle">
+          <span class="red box"></span>
+        </div>
+        <div class="circle">
+          <span class="yellow box"></span>
+        </div>
+        <div class="circle">
+          <span class="green box"></span>
+        </div>
+      </div>
+      <div class="content-body">
+        <div class="description">
+            <h4>Connect Me :</h4>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <fa-icon [icon]="faMobileScreen" class="faMobileScreen"></fa-icon>
+                </div>
+                <h5>+91 999 520 2764</h5>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <fa-icon [icon]="faEnvelope" class="faEnvelope"></fa-icon>
+                </div>
+                <h5>pragathpth@gmail.com</h5>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <fa-icon [icon]="faInstagram" class="faInstagram"></fa-icon>
+                </div>
+                <h5>pragath_pth</h5>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h4>Feel Free To Contact Me :</h4>
+            <form [formGroup]="contactForm" (ngSubmit)="sendData()">
+                <div class="form-group">
+                    <h5>Name :</h5>
+                    <input class="p-inputtext-sm" type="text" pInputText formControlName="name">
+                </div>
+                <div class="form-group email">
+                    <h5>Email Id :</h5>
+                    <input class="p-inputtext-sm" type="text" pInputText formControlName="name">
+                </div>
+                <div class="form-group message">
+                    <h5>Message :</h5>
+                    <textarea [rows]="5" [cols]="30" pInputTextarea></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2 btn-sm-block">
+                    Send Message
+                    <fa-icon [icon]="faPaperPlane" class="faPaperPlane"></fa-icon>
+                </button>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
