@@ -5,6 +5,7 @@ import { faFileInvoice } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 import * as AOS from 'aos';
+import * as moment from 'moment';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class HomepageComponent implements OnInit {
   isDarkMode: any;
   valueFromLS: any;
   subscription!: Subscription;
+  duration: any;
 
   constructor(private appService: AppService) { }
 
@@ -38,6 +40,23 @@ export class HomepageComponent implements OnInit {
       this.isDarkMode = res;
       // console.log(this.isDarkMode);
     });
+    this.calculateDate();
+  }
+
+  calculateDate(){
+    let now = moment(new Date());
+    let startDate = moment("01/01/2021", "DD/MM/YYYY");
+
+    var years = now.diff(startDate, 'year');
+    startDate.add(years, 'years');
+
+    var months = now.diff(startDate, 'months');
+    startDate.add(months, 'months');
+
+    var days = now.diff(startDate, 'days');
+    console.log(years + ' years ' + months + ' months ' + days + ' days');
+    this.duration = years+'.'+months;
+    
   }
 
   ngOnDestroy() {

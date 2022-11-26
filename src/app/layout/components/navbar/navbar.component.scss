@@ -1,7 +1,11 @@
-.navbar{
-    z-index: 999;
+.nav-header{
+    height: 65px;
+    display: flex;
+    align-items: center;
     box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
     .container{
+        display: flex;
+        justify-content: space-between;
         .my-logo{
             width: 50px;
             fill: #303a52;
@@ -66,6 +70,7 @@
         .nav{
             .nav-link{
                 font-weight: 700;
+                color: #999999;
             }
         }
         .nav-mobile{
@@ -73,31 +78,31 @@
         }
     }
     .active-tab{
-        color:rgb(0, 7, 102);
+        color:#421dd8 !important; // rgb(0, 7, 102);
     }
 }
 
 .dark-mode{
-    background: #242526;
+    background: #1b1b1b; //242526
     box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
     .container{
         .my-logo{
             // fill: white;
-            fill: #77d990;
+            fill: #28BA67; //2aaf4c
         }
         .nav{
             .nav-link{
-                color:#77d990;
+                color: #747474; //77d990
             }
         }
     }
     .active-tab{
-        color: #2aaf4c !important;
+        color: #28BA67 !important; //2aaf4c
     }
 }
 
 @media screen and (max-width: 768px){
-    .navbar{
+    .nav-header{
         .container{
             .nav{
                 display: none;
@@ -110,10 +115,10 @@
                 margin-right: 1rem;
                 .nav-link{
                     padding: 0.7rem;
-                    color: #4f4dd1;
+                    color: #999999; //4f4dd1
                 }
                 .nav-link:hover, .active-tab{
-                    color: #0300ab ;
+                    color: #421dd8 !important; //0300ab
                 }
             }
         }
@@ -122,7 +127,7 @@
         .container{
             .nav-mobile{
                 .nav-link{
-                    color:#77d990;
+                    color:#747474; //77d990
                 }
                 .nav-link:hover, .active-tab{
                     color: #2aaf4c !important;

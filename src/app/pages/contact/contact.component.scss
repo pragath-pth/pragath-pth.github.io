@@ -1,5 +1,6 @@
 .about-container{
-    height: 86.6vh;
+    min-height: 100vh;
+    // padding-top: 65px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,7 +191,7 @@
     .about-container{
         .content-container{
             width: 550px;
-            height: 700px;
+            // height: 700px;
             .content-body{
                 display: block;
                 overflow: auto;
