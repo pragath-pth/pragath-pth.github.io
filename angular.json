@@ -41,6 +41,10 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.js",
               "node_modules/aos/dist/aos.js"
+            ],
+            "allowedCommonJsDependencies":[
+              "moment",
+              "aos"
             ]
           },
           "configurations": {
@@ -114,6 +118,5 @@
         }
       }
     }
-  },
-  "defaultProject": "pragath-pth"
+  }
 }

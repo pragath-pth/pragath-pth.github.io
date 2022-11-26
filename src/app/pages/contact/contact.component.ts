@@ -25,6 +25,7 @@ export class ContactComponent implements OnInit {
     email: new FormControl(''),
     phone: new FormControl(''),
     message: new FormControl(''),
+    date: new FormControl('')
   });
 
   constructor(private appService: AppService) { }
@@ -49,6 +50,7 @@ export class ContactComponent implements OnInit {
   }
 
   sendData(){
-
+    this.contactForm.controls['date'].setValue(new Date());
+    console.log(this.contactForm.value);
   }
 }
