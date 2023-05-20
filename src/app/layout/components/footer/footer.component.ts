@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 
@@ -11,10 +12,12 @@ import { AppService } from 'src/app/app.service';
 export class FooterComponent implements OnInit {
 
   year: any;
-  faHeart = faHeart;
+  faHeart = farHeart;
+  fasHeart = fasHeart;
   isDarkMode: any;
   valueFromLS: any;
   subscription!: Subscription;
+  loveToggled: boolean = false;
 
   constructor(private appService: AppService) { }
 
@@ -31,6 +34,10 @@ export class FooterComponent implements OnInit {
       this.isDarkMode = res;
       // console.log(this.isDarkMode);
     });
+  }
+
+  toggleHeart(){
+    this.loveToggled = !this.loveToggled;
   }
 
   ngOnDestroy() {
