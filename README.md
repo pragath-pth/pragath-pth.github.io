@@ -1,7 +1,7 @@
 
 # My Personal Portfolio
 
-A Portfolio website built from scratch using Angular 14, made responsive and hosted on Github Pages. Feel free to check it out from the link below.
+A Portfolio website built from scratch using Angular 15, made responsive and hosted on Github Pages. Feel free to check it out from the link below.
 
 
 ## 🔗 Links
