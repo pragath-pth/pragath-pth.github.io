@@ -34,11 +34,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/aos/dist/aos.css",
-              "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
+              "node_modules/primeicons/primeicons.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.js",
@@ -86,10 +83,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "pragath-pth:build:production"
+              "buildTarget": "pragath-pth:build:production"
             },
             "development": {
-              "browserTarget": "pragath-pth:build:development"
+              "buildTarget": "pragath-pth:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -97,7 +94,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pragath-pth:build"
+            "buildTarget": "pragath-pth:build"
           }
         },
         "test": {
