@@ -13,15 +13,20 @@
             backdrop-filter: blur(9.6px);
             // -webkit-backdrop-filter: blur(9.6px);
             border: 2px solid rgba(255, 255, 255, 0.1);
-            width: 200px;
+            width: 315px;
             height: 400px;
-            margin: 0px 10px 0px 0px;
+            margin: 0px 0px 0px 10px;
             overflow: hidden;
             img{
-                width: 272px;
-                position: absolute;
-                top: 0px;
-                right: -51px;
+                // width: 272px;
+                // position: absolute;
+                // top: 0px;
+                // right: -51px;
+                width: 100%;
+                height: auto;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
             }
         }
         .content-container{
