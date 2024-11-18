@@ -1,20 +1,21 @@
-<div class="homepage" [ngClass]="{'dark-mode' : isDarkMode}">
-    <div class="container" data-aos="fade-right" data-aos-duration="1000">
+<div class="homepage" [ngClass]="{'dark-mode' : isDarkMode, 'light-mode' : !isDarkMode}">
+    <div class="container" data-aos="zoom in" data-aos-duration="1000">
         <div class="content-container">
             <div class="main">
+                <h4>Hi, I'm</h4>
                 <h3>Pragath G</h3>
-                <h5>Software Engineer</h5>
+                <h5><span class="ng">Angular</span> Developer and Front-End Specialist</h5>
                 <div class="description">
-                    <p>I'm currently working at UST.<br> I have an overall experience of {{duration}} Years.</p>
+                    <p>I build responsive, scalable, and maintainable web applications using Angular.</p>
                 </div>
                 <div class="connect">
-                    <a href="https://github.com/pragath-pth"><fa-icon [icon]="faGithub" aria-label="Github Page"></fa-icon></a>
-                    <a href="https://www.linkedin.com/in/pragath-pth/"><fa-icon [icon]="faLinkedin" aria-label="LinkedIn Page"></fa-icon></a>
+                    <a href="https://github.com/pragath-pth"><i class="fa-brands fa-github" aria-label="Github Page"></i></a>
+                    <a href="https://www.linkedin.com/in/pragath-pth/"><i class="fa-brands fa-linkedin" aria-label="LinkedIn Page"></i></a>
                 </div>
                 <div class="resume">
                     <a class="btn btn-primary mb-2 btn-sm-block" href="https://drive.google.com/file/d/1ZIh5ZQ2y6ep4BU7sQvNlZrZ0N__wJodB/view?usp=sharing">
-                        View My Resume 
-                        <fa-icon [icon]="faFileInvoice"></fa-icon>
+                        View My Resume
+                        <i class="fa-solid fa-file-invoice"></i>
                     </a>
                 </div>
             </div>

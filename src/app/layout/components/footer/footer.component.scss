@@ -13,8 +13,11 @@
             text-decoration: none;
         }
     }
-    fa-icon{
+    i{
         cursor: pointer;
+        &.fa-solid{
+            color:#7367f0; 
+        }
     }
 }
 
@@ -22,5 +25,10 @@
     background: #18191A;
     .name{
         color: #28BA67; //2aaf4c
+    }
+    i{
+        &.fa-solid{
+            color:#28BA67; 
+        }
     }
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './homepage.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -9,8 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomepageComponent
   ],
   imports: [
-    CommonModule,
-    FontAwesomeModule
+    CommonModule
   ]
 })
 export class HomepageModule { }
