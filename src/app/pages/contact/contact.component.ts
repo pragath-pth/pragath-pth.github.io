@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppService } from 'src/app/app.service';
-import { faEnvelope, faMobileScreen, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import * as AOS from 'aos';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -16,10 +14,6 @@ export class ContactComponent implements OnInit {
   isDarkMode: any;
   valueFromLS: any;
   subscription!: Subscription;
-  faEnvelope = faEnvelope;
-  faInstagram = faInstagram;
-  faMobileScreen= faMobileScreen;
-  faPaperPlane = faPaperPlane;
   contactForm: FormGroup = new FormGroup({
     name: new FormControl(''),
     email: new FormControl(''),

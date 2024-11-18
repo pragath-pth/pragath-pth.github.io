@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
-import { faHouse, faCode, faBriefcase, faListUl, faIdCard } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -11,11 +10,6 @@ export class NavbarComponent implements OnInit {
 
   isDarkMode:any ;
   storedTheme = localStorage.getItem('darkMode');
-  faHouse = faHouse;
-  faCode = faCode;
-  faBriefcase = faBriefcase;
-  faListUl = faListUl;
-  faIdCard = faIdCard;
 
   constructor(private appService: AppService) { }
 

@@ -5,7 +5,7 @@
         <div class="item fast-transition">
           <div class="item-head">
             <h5 class="mb-0">WHO</h5>
-            <fa-icon [icon]="faUser"></fa-icon>
+            <i class="fa-regular fa-user"></i>
           </div>
           <div class="item-data">
             <pre class="mb-2">{{who}}</pre>
@@ -16,7 +16,7 @@
         <div class="item fast-transition">
           <div class="item-head">
             <h5 class="mb-0">WHAT</h5>
-            <fa-icon [icon]="faCode"></fa-icon>
+            <i class="fa-solid fa-code"></i>
           </div>
           <div class="item-data">
             <pre class="mb-2">{{what}}</pre>
@@ -27,7 +27,7 @@
         <div class="item fast-transition">
           <div class="item-head">
             <h5 class="mb-0">WHERE</h5>
-            <fa-icon [icon]="faLocationCrosshairs"></fa-icon>
+            <i class="fa-solid fa-location-crosshairs"></i>
           </div>
           <div class="item-data">
             <pre class="mb-2">{{where}}</pre>
@@ -38,7 +38,7 @@
         <div class="item fast-transition">
           <div class="item-head">
             <h5 class="mb-0">WHEN</h5>
-            <fa-icon [icon]="faClock"></fa-icon>
+            <i class="fa-regular fa-clock"></i>
           </div>
           <div class="item-data">
             <pre class="mb-2">{{when}}</pre>
@@ -49,7 +49,7 @@
         <div class="item fast-transition">
           <div class="item-head">
             <h5 class="mb-0">WHY</h5>
-            <fa-icon [icon]="faComputer"></fa-icon>
+            <i class="fa-solid fa-computer"></i>
           </div>
           <div class="item-data">
             <pre class="mb-2">{{why}}</pre>
@@ -62,7 +62,7 @@
       <p-timeline [value]="timelineData" align="alternate" styleClass="customized-timeline">
         <ng-template pTemplate="marker" let-data>
           <span class="custom-marker p-shadow-2" [style.backgroundColor]="isDarkMode ? '#242526' : '#7367f0'">
-            <fa-icon [icon]="data.icon"></fa-icon>
+            <i [class]="data.icon"></i>
           </span>
         </ng-template>
         <ng-template pTemplate="content" let-data>

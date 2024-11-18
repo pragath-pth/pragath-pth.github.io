@@ -32,13 +32,12 @@
         .content-container{
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.14);
             border-radius: 10px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(9.6px);
             -webkit-backdrop-filter: blur(9.6px);
             // border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 500px;
+            width: 590px;
             height: 400px;
             .main{
                 margin-left: 70px;
@@ -49,9 +48,15 @@
                     font-weight: 700;
                     font-size: 2.4rem;
                 }
+                h4{
+                    font-weight: 600;
+                }
                 h5{
                     font-weight: 600;
                     font-size: 1.1rem;
+                    .ng{
+                        font-weight: 700;
+                    }
                 }
                 .description{
                     margin-top: 20px;
@@ -65,8 +70,42 @@
                         text-decoration: none;
                         margin-right: 5px;
                     }
-                    fa-icon{
+                    i{
                         font-size: 1.25rem;
+                    }
+                }
+                .resume{
+                    margin-top: 15px;
+                    .btn-primary{
+                        font-weight: 700;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.light-mode{
+    background: #9d95f30d;
+    .container{
+        // .img-container{
+        //     img{
+
+        //     }
+        // }
+        .content-container{
+            background: white;
+            // background: rgba(255, 255, 255, 0.14);
+            .main{
+                h4{
+                    color: #5b4fd7;
+                }
+                h5{
+                    .ng{
+                        background: -webkit-linear-gradient(120deg, rgba(255,25,162,1) 0%, rgba(214,21,226,1) 50%, rgba(150,4,254,1) 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
                     }
                 }
                 .resume{
@@ -75,8 +114,6 @@
                         border-color: #7367f0!important;
                         background-color: #7367f0!important;
                         color: #fff!important;
-                        font-weight: 700;
-                        font-size: 14px;
                     }
                     .btn-primary:hover{
                         box-shadow: 0 8px 25px -8px #7367f0;
@@ -96,29 +133,31 @@
             color: white;
             transition: all 0.3s;
             .main{
+                h3{
+                    color: #E5F4E3;
+                }
                 .connect{
-                    fa-icon{
+                    i{
                         color: #28BA67; //2aaf4c
                     }
                 }
                 .resume{
                     .btn-primary {
-                        // --green: #1BFD9C;
-                        --green: #28BA67; //77d990
+                        --green: #009941;
                         position: relative;
                         font-family: inherit;
                         overflow: hidden;
                         transition: all 0.3s;
-                        // line-height: 1.4em;
-                        border: 1px solid var(--green) !important;
+                        // border: 1px solid var(--green) !important;
+                        border: 0px;
                         // background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
-                        background: none !important;
-                        color: var(--green) !important;
+                        background: #E5F4E3;
+                        color: var(--green);
                         // box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
                     }
                        
                     .btn-primary:hover {
-                     color: #82ffc9;
+                    //  color: #82ffc9;
                      box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
                     }
                     
@@ -141,9 +180,6 @@
                     p{
                         color:#bdbdbd;
                     }
-                }
-                h3{
-                    color: #c5c5c5;
                 }
                 h5{
                     color: #c5c5c5;
