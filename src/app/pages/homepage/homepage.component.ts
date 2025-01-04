@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 import * as AOS from 'aos';
-import * as moment from 'moment';
+import moment from 'moment';
 
 
 @Component({

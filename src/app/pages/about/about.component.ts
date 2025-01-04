@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppService } from 'src/app/app.service';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as AOS from 'aos';
 
 @Component({

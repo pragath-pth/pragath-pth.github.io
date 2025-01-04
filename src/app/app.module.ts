@@ -11,6 +11,12 @@ import { AboutModule } from './pages/about/about.module';
 import { ContactModule } from './pages/contact/contact.module';
 import { SkillsModule } from './pages/skills/skills.module';
 import { WorksModule } from './pages/works/works.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ApplicationConfig } from '@angular/core';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { providePrimeNG } from 'primeng/config';
+import { MyPreset } from './app-theme-preset';
+
 
 @NgModule({
   declarations: [
@@ -27,10 +33,23 @@ import { WorksModule } from './pages/works/works.module';
     AboutModule,
     ContactModule,
     SkillsModule,
-    WorksModule
+    WorksModule,
+    NgbModule
 
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync(),
+    providePrimeNG({
+        theme: {
+            preset: MyPreset,
+            options: {
+              prefix: 'p',
+              darkModeSelector: ".dark-mode",
+              cssLayer: false
+            }
+        }
+    })
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
