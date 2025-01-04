@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TextareaModule } from 'primeng/textarea';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     FormsModule,
     ReactiveFormsModule,
     InputTextModule,
-    InputTextareaModule
+    TextareaModule
   ]
 })
 export class ContactModule { }
