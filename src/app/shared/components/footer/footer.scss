@@ -1,0 +1,30 @@
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    .copyright{
+        font-size: 15px;
+        font-weight: 600;
+        color: gray;
+        text-align: center;
+    }
+    .name{
+        color: var(--primary-text-color-1);
+        font-weight: 700;
+        a{
+            color: unset;
+            text-decoration: none;
+        }
+    }
+    i{
+        cursor: pointer;
+        &.fa-solid{
+            color: var(--primary-text-color-1);
+        }
+    }
+}
+
+.dark-mode{
+    background: #18191A;
+}

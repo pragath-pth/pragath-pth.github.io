@@ -1,0 +1,35 @@
+<div class="home">
+    <div class="content">
+        <div class="info-container">
+            <p class="greeting">Hey There !</p>
+            <h6 class="myself">
+                I'm Pragath, a software developer specializing in modern web technologies. 
+            </h6>
+            <div class="badge">
+                <span class="dot"></span>
+                <span>Angular Developer • UI Enthusiast</span>
+            </div>
+            <p class="description">
+                I craft responsive, accessible UIs with Angular, TypeScript, and clean design systems. From micro-interactions to scalable architectures, I bring ideas to life with precision and polish.
+            </p>
+            <div class="connect-container">
+                <h6 class="header-txt">Connect</h6>
+                <div class="connect-list-container">
+                    <div class="connect-item" *ngFor="let item of connectionList; let i = index;" (click)="openConnectURL(i)">
+                        <span class="item-icon">
+                            <i [class]="item?.connectIcon"></i>
+                        </span>
+                        <span class="item-name">{{item?.connectName}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portrait-container">
+            <img class="portrait" src="assets/images/profile.png" alt="">
+            <div class="socials">
+                <a class="chip" href="https://instagram.com/pragath_pth" target="_blank" rel="noreferrer">@pragath_pth</a>
+                <a class="chip" href="https://maps.app.goo.gl/zieq1tpyViJ4k2zf9" target="_blank" rel="noreferrer">Kollam, Kerala, India • IST</a>
+            </div>
+        </div>
+    </div>
+</div>

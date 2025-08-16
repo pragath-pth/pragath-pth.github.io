@@ -1,0 +1,13 @@
+<div class="footer">
+    <div class="copyright">
+        <span>© Copyright {{year}}. All Rights Reserved.</span>
+        <span>
+            <i class="fa-regular fa-heart" *ngIf="!loveToggled" (click)="toggleHeart()"></i>
+            <i class="fa-solid fa-heart" *ngIf="loveToggled" (click)="toggleHeart()"></i>
+            by
+        </span>
+        <span class="name">
+            <a href="#">Pragath G</a>
+        </span>
+    </div>
+</div>

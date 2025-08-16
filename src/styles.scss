@@ -1,11 +1,114 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
-@import "../node_modules/bootstrap/dist/css/bootstrap.min.css" layer(bootstrap);
-
-*{
-    font-family: 'Nunito';
+@font-face {
+    font-family: "Nunito"; // 400
+    src: url('../public/assets/fonts/Nunito/Nunito-Regular.ttf') format("opentype");
+    font-weight: 400;
 }
-/* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+
+@font-face {
+    font-family: "Nunito"; // 200
+    src: url('../public/assets/fonts/Nunito/Nunito-ExtraLight.ttf') format("opentype");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Nunito"; // 300
+    src: url('../public/assets/fonts/Nunito/Nunito-Light.ttf') format("opentype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Nunito"; // 500
+    src: url('../public/assets/fonts/Nunito/Nunito-Medium.ttf') format("opentype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Nunito"; // 600
+    src: url('../public/assets/fonts/Nunito/Nunito-SemiBold.ttf') format("opentype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Nunito"; // 700
+    src: url('../public/assets/fonts/Nunito/Nunito-Bold.ttf') format("opentype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Nunito"; // 800
+    src: url('../public/assets/fonts/Nunito/Nunito-ExtraBold.ttf') format("opentype");
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: "Nunito"; // 900
+    src: url('../public/assets/fonts/Nunito/Nunito-Black.ttf') format("opentype");
+    font-weight: 900;
+}
+
+* {
+    font-family: "Nunito";
+}
+
+body {
+    margin: 0;
+}
+
+:root {
+    --primary-bg-color: #FAFAFE;
+    --primary-text-color: #000000;
+    --white-bg-color: #FFFFFF;
+
+    --primary-text-color-1: #7367F0;
+    --gradient-text: linear-gradient(145deg, #7463B6, #3E2A94);
+    
+    --logo-color: #303A52;
+    --nav-menu-color: #999999;
+    --active-menu-color: #421DD8;
+    --hover-menu-color: #684AE0;
+
+    --card-color: #FFFFFF;
+    --card-bg-gradient: linear-gradient(180deg, #ffffff, #f9f9f9);
+    --card-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    --card-border-color: #FFFFFF;
+    --border-color: #e0e0e0;
+
+    --dot-shadow: 0 0 14px rgba(66, 29, 216, 0.6);
+    --chip-color: #334155;
+
+    --grey-txt-color: #575757;
+
+    --connect-bg: #FFFFFF;
+    --header-txt-color: #421DD8;
+    --icon-color: #808080;
+}
+
+.dark-mode {
+    --primary-bg-color: #0D0C0F;
+    --primary-text-color: #FFFFFF;
+
+    --primary-text-color-1: #28BA67;
+    --gradient-text: linear-gradient(145deg, #FFFFFF, #28BA67);
+
+    --logo-color: #28BA67;
+    --nav-menu-color: #747474;
+    --active-menu-color: #28BA67;
+    --hover-menu-color: #24A75D;
+
+    --card-color: #121214;
+    --card-bg-gradient: linear-gradient(180deg, #131316, #0b0b0c);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, .35), 0 2px 10px rgba(0, 0, 0, .25);
+    --card-border-color: #232327;
+    --border-color: #232327;
+
+    --dot-shadow: 0 0 14px rgba(33, 197, 93, .6);
+    --chip-color: #A1A1AA;
+
+    --grey-txt-color: #808080;
+
+    --connect-bg: #131215;
+    --header-txt-color: #EFEFEF;
+    --icon-color: #A1A1AA;
+}

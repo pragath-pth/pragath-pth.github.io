@@ -1,0 +1,26 @@
+.app-container {
+    .app-layout{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+        background-color: var(--primary-bg-color);
+        color: var(--primary-text-color);
+        .header-container{
+            height: 70px;
+            box-shadow: 0 4px 24px #22292f1a;
+        }
+        .router-container{
+            flex-grow: 1;
+            overflow: auto;
+        }
+        .footer-container{
+            height: 50px;
+        }
+    }
+    .dark-mode{
+        .header-container{
+            box-shadow: 0 4px 24px #bbc5ce1a;
+        }
+    }
+}
