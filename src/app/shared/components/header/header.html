@@ -53,10 +53,12 @@
                 *ngFor="let menu of menuList; let i = index;"
                 [routerLink]="menu?.menuRoute"
                 routerLinkActive="menu-active"
-                [routerLinkActiveOptions]="{ exact: menu?.menuRoute === '/' }">
-                <!-- <span class="menu-icon">
+                [routerLinkActiveOptions]="{ exact: menu?.menuRoute === '/' }"
+                [attr.aria-label]="menu?.menuName"
+                [title]="menu?.menuName">
+                <span class="menu-icon">
                     <i [class]="'fa-solid ' + menu?.menuIcon"></i>
-                </span> -->
+                </span>
                 <span class="menu-name">{{menu?.menuName}}</span>
             </a>
         </div>
