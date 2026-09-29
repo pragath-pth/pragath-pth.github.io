@@ -36,6 +36,7 @@
                 align-items: center;
 
                 .menu-icon {
+                    display: none;
                     font-size: 14px;
                     color: var(--nav-menu-color);
                     transition: color 0.3s ease;
@@ -238,20 +239,103 @@
 
 @media screen and (max-width: 768px) {
     .header {
-        padding: 8px 6vw;
+        padding: 8px 5vw;
+
+        .left-header {
+            .logo-container {
+                .logo {
+                    width: 44px;
+                }
+            }
+        }
+
         .right-header {
             .menu-container {
+                gap: 0.9rem;
+
                 .menu-item {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 36px;
+                    min-height: 36px;
+                    padding: 6px;
+                    border-radius: 8px;
+                    transition: color 0.25s ease, background-color 0.25s ease, transform 0.2s ease;
+
                     .menu-icon {
-                        font-size: 17px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 18px;
                     }
+
                     .menu-name {
                         display: none;
                     }
+
+                    &:hover {
+                        transform: translateY(-1px);
+                    }
+
+                    &:active {
+                        transform: scale(0.92);
+                    }
+                }
+
+                .menu-active {
+                    background: color-mix(in srgb, var(--active-menu-color) 12%, transparent);
+
+                    .menu-icon {
+                        color: var(--active-menu-color);
+                    }
                 }
             }
+
             .theme-toggle-container {
-                margin: 0 0 0 1rem;
+                margin: 0 0 0 0.8rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 8px 3vw;
+
+        .left-header {
+            .logo-container {
+                .logo {
+                    width: 38px;
+                }
+            }
+        }
+
+        .right-header {
+            .menu-container {
+                gap: 0.4rem;
+
+                .menu-item {
+                    min-width: 32px;
+                    min-height: 32px;
+                    padding: 4px;
+
+                    .menu-icon {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .theme-toggle-container {
+                margin: 0 0 0 0.4rem;
+
+                .theme-toggle-btn {
+                    transform: scale(0.9);
+
+                    &:hover {
+                        transform: scale(0.95);
+                    }
+                }
             }
         }
     }
