@@ -1,18 +1,21 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Data } from '../../services/data';
+import { ThemeService } from '../../services/theme-service';
+import { map } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'app-header',
   imports: [
     CommonModule, FormsModule
   ],
+  selector: 'app-header',
+  styleUrl: './header.scss',
   templateUrl: './header.html',
-  styleUrl: './header.scss'
 })
 export class Header implements OnInit {
 
+  isDarkMode: boolean = false;
   menuList: any = [
     {
       menuName: 'Home',
@@ -29,7 +32,7 @@ export class Header implements OnInit {
     {
       menuName: 'Works',
       menuRoute: '/works',
-      menuIcon: 'fa-hammer',
+      menuIcon: 'fa-briefcase',
       isActive: false, 
     },
     {
@@ -45,19 +48,13 @@ export class Header implements OnInit {
       isActive: false,  
     }
   ]
-  isDarkMode: boolean = false;
-  storedTheme = localStorage.getItem('darkMode');
 
-  constructor(private dataService: Data){ }
+  constructor(private themeService: ThemeService, private destroyRef: DestroyRef){ }
 
   ngOnInit() {
-    console.log(this.storedTheme);
-    if(this.storedTheme && this.storedTheme === 'true'){
-      this.isDarkMode = true;
-    } else if(this.storedTheme && this.storedTheme === 'false'){
-      this.isDarkMode = false;
-    }
-    this.dataService.setDarkMode(this.isDarkMode);
+    this.themeService.currentTheme.pipe(map(theme => theme === 'dark'),takeUntilDestroyed(this.destroyRef)).subscribe(isDark => {
+      this.isDarkMode = isDark;
+    });
   }
 
   navigateToRoute(index: any){
@@ -67,14 +64,9 @@ export class Header implements OnInit {
     this.menuList[index].isActive = true;
   }
 
-  toggleTheme(){
-    if(this.isDarkMode){
-      localStorage.setItem('darkMode','true');
-    } else {
-      localStorage.setItem('darkMode','false');
-    }
-    console.log(this.isDarkMode)
-    this.dataService.setDarkMode(this.isDarkMode);
+  switchThemeMode(){
+    this.themeService.toggleTheme();
   }
 
 }
+

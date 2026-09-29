@@ -52,15 +52,15 @@
             <div class="menu-item" (click)="navigateToRoute(i)"
                 [ngClass]="{ 'menu-active': menu?.isActive }" 
                 *ngFor="let menu of menuList; let i = index;">
-                <span class="menu-icon">
+                <!-- <span class="menu-icon">
                     <i [class]="'fa-solid ' + menu?.menuIcon"></i>
-                </span>
+                </span> -->
                 <span class="menu-name">{{menu?.menuName}}</span>
             </div>
         </div>
         <div class="theme-toggle-container">
             <label class="switch">
-                <input id="input" type="checkbox" checked="darkTheme" [(ngModel)]="isDarkMode" (change)="toggleTheme();"/>
+                <input id="input" type="checkbox" checked="darkTheme" [(ngModel)]="isDarkMode" (change)="switchThemeMode();"/>
                 <div class="slider round">
                     <div class="sun-moon">
                     <svg id="moon-dot-1" class="moon-dot" viewBox="0 0 100 100">

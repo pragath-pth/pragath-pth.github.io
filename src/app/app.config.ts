@@ -1,10 +1,11 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { definePreset } from '@primeuix/themes';
 import Lara from '@primeuix/themes/lara';
 import { providePrimeNG } from 'primeng/config';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 const MyPreset = definePreset(Lara, {
   semantic: {
@@ -27,7 +28,6 @@ const MyPreset = definePreset(Lara, {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     providePrimeNG({
       theme: {
@@ -37,7 +37,8 @@ export const appConfig: ApplicationConfig = {
           darkModeSelector: '.dark-mode',
           cssLayer: false
         }
-      }
+      },
+      license: environment.primeNGLicense
     }),
     provideHttpClient(withFetch()),
 

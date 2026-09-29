@@ -1,45 +1,31 @@
-import { Component, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, DestroyRef, OnDestroy, OnInit, signal } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { Header } from './shared/components/header/header';
 import { Footer } from './shared/components/footer/footer';
 import { Meta } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { Data } from './shared/services/data';
-import { Subscription } from 'rxjs';
+import { map, Subscription } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ThemeService } from './shared/services/theme-service';
+
 
 @Component({
+  imports: [RouterOutlet, Header, Footer, CommonModule],
   selector: 'app-root',
-  imports: [RouterOutlet, 
-    Header, Footer,
-    CommonModule
-  ],
+  styleUrl: './app.scss',
   templateUrl: './app.html',
-  styleUrl: './app.scss'
 })
-export class App implements OnInit, OnDestroy{
+export class App implements OnInit {
   protected readonly title = signal('pragath-pth');
   isDarkMode: boolean = false;
-  darkModeInputSubscription!: Subscription;
 
-  constructor(public router: Router, private meta: Meta, private dataService: Data){ }
+  constructor(public router: Router, private meta: Meta, private themeService: ThemeService, private destroyRef: DestroyRef){ }
 
   ngOnInit() {
     this.meta.updateTag({ name: 'pragathpth', content: 'My Personal Portfolio' });
     
-    this.darkModeInputSubscription = this.dataService.isDarkModeActive.subscribe({
-      next: res => {
-        console.log(res);
-        if(res !== null){
-          this.isDarkMode = res;
-        }
-      },
-      error: error => {
-        this.isDarkMode = false;
-      }
-    })
-  }
-
-  ngOnDestroy() {
-    this.darkModeInputSubscription.unsubscribe();
+    this.themeService.currentTheme.pipe(map(theme => theme === 'dark'),takeUntilDestroyed(this.destroyRef)).subscribe(isDark => {
+      this.isDarkMode = isDark;
+    });
   }
 }
