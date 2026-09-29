@@ -1,0 +1,263 @@
+<div class="contact-page">
+  <div class="contact-wrapper">
+    <!-- Top Header / Title Section -->
+    <div class="header-section">
+      <div class="badge">
+        <span class="dot"></span>
+        <span>Get in Touch • Let's Collaborate</span>
+      </div>
+      <h1 class="page-title">Contact Me</h1>
+      <p class="page-subtitle">
+        Have a project in mind, a question about modern web development, or just want to say hi? Feel free to reach out anytime!
+      </p>
+    </div>
+
+    <!-- Main Content Container: Info Panel & Form Panel -->
+    <div class="content-container">
+      <!-- Left Info Panel -->
+      <div class="info-panel">
+        <div class="section-title-wrap">
+          <h6 class="header-txt">Connect Me</h6>
+          <p class="section-desc">Reach out directly via phone, email, or social media.</p>
+        </div>
+
+        <!-- Contact Cards List -->
+        <div class="contact-list">
+          <div
+            class="contact-card"
+            *ngFor="let item of contactInfoList"
+            [class.interactive]="item.href"
+          >
+            <div class="card-icon-wrap">
+              <i [class]="item.icon"></i>
+            </div>
+            <div class="card-content">
+              <span class="card-label">{{ item.label }}</span>
+              <a
+                *ngIf="item.href"
+                [href]="item.href"
+                [attr.target]="item.isExternal ? '_blank' : null"
+                [attr.rel]="item.isExternal ? 'noopener noreferrer' : null"
+                class="card-value link-value"
+              >
+                {{ item.value }}
+                <i
+                  *ngIf="item.isExternal"
+                  class="fa-solid fa-arrow-up-right-from-square external-icon"
+                ></i>
+              </a>
+              <span *ngIf="!item.href" class="card-value">{{ item.value }}</span>
+            </div>
+
+            <!-- Copy Action Button if copyable -->
+            <button
+              *ngIf="item.copyable"
+              type="button"
+              class="copy-btn"
+              [class.copied]="copiedField === item.id"
+              (click)="copyToClipboard(item.value, item.id, $event)"
+              [title]="copiedField === item.id ? 'Copied!' : 'Copy to clipboard'"
+              aria-label="Copy to clipboard"
+            >
+              <i
+                class="fa-solid"
+                [ngClass]="copiedField === item.id ? 'fa-check' : 'fa-copy'"
+              ></i>
+              <span class="copy-text">{{ copiedField === item.id ? 'Copied' : 'Copy' }}</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Social Connections Box (matches Home page connect-container) -->
+        <div class="connect-container">
+          <h6 class="header-txt">Social Profiles</h6>
+          <div class="connect-list-container">
+            <div
+              class="connect-item"
+              *ngFor="let social of socialLinks"
+              (click)="openURL(social.url, $event)"
+            >
+              <span class="item-icon">
+                <i [class]="social.icon"></i>
+              </span>
+              <span class="item-name">{{ social.name }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Response Time Indicator -->
+        <div class="response-note">
+          <i class="fa-regular fa-clock"></i>
+          <span>Prompt response typically within 24 hours.</span>
+        </div>
+      </div>
+
+      <!-- Right Form Panel / Code Window Card -->
+      <div class="form-panel">
+        <div class="window-card">
+          <!-- Window Header (Mac style circles from old design) -->
+          <div class="window-header">
+            <div class="circles">
+              <span class="circle red"></span>
+              <span class="circle yellow"></span>
+              <span class="circle green"></span>
+            </div>
+            <div class="window-tab">
+              <i class="fa-solid fa-paper-plane tab-icon"></i>
+              <span class="tab-title">contact-form.ts</span>
+            </div>
+            <div class="header-spacer"></div>
+          </div>
+
+          <!-- Window Body / Form Content -->
+          <div class="window-body">
+            <!-- Success State -->
+            <div class="success-banner" *ngIf="isSuccess">
+              <div class="success-icon-wrap">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <h3 class="success-title">Message Sent Successfully!</h3>
+              <p class="success-desc">
+                Thank you for reaching out. I've received your note and will get back to you shortly.
+              </p>
+              <button type="button" class="btn btn-outline" (click)="resetForm()">
+                <i class="fa-solid fa-arrow-rotate-left"></i>
+                Send Another Message
+              </button>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="form-wrapper" *ngIf="!isSuccess">
+              <div class="form-header-group">
+                <h4 class="form-heading">Feel Free To Contact Me :</h4>
+                <p class="form-subheading">Fill in the fields below and I'll receive your direct message.</p>
+              </div>
+
+              <form [formGroup]="contactForm" (ngSubmit)="sendData()" novalidate>
+                <!-- Name Field -->
+                <div class="form-group" [class.has-error]="nameControl?.touched && nameControl?.invalid">
+                  <label for="name" class="form-label">
+                    <span>Name :</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <span class="input-icon">
+                      <i class="fa-regular fa-user"></i>
+                    </span>
+                    <input
+                      id="name"
+                      type="text"
+                      class="custom-input"
+                      formControlName="name"
+                      placeholder="e.g. John Doe"
+                      autocomplete="name"
+                    />
+                  </div>
+                  <div
+                    class="field-error"
+                    *ngIf="nameControl?.touched && nameControl?.invalid"
+                  >
+                    <span *ngIf="nameControl?.errors?.['required']">Please enter your name.</span>
+                    <span *ngIf="nameControl?.errors?.['minlength']">Name must be at least 2 characters.</span>
+                  </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group" [class.has-error]="emailControl?.touched && emailControl?.invalid">
+                  <label for="email" class="form-label">
+                    <span>Email Id :</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <span class="input-icon">
+                      <i class="fa-regular fa-envelope"></i>
+                    </span>
+                    <input
+                      id="email"
+                      type="email"
+                      class="custom-input"
+                      formControlName="email"
+                      placeholder="name@example.com"
+                      autocomplete="email"
+                    />
+                  </div>
+                  <div
+                    class="field-error"
+                    *ngIf="emailControl?.touched && emailControl?.invalid"
+                  >
+                    <span *ngIf="emailControl?.errors?.['required']">Please enter your email address.</span>
+                    <span *ngIf="emailControl?.errors?.['email']">Please enter a valid email address.</span>
+                  </div>
+                </div>
+
+                <!-- Phone Field (Optional) -->
+                <div class="form-group">
+                  <label for="phone" class="form-label">
+                    <span>Phone Number <small class="text-muted">(Optional)</small> :</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <span class="input-icon">
+                      <i class="fa-solid fa-mobile-screen"></i>
+                    </span>
+                    <input
+                      id="phone"
+                      type="tel"
+                      class="custom-input"
+                      formControlName="phone"
+                      placeholder="+91 ..."
+                      autocomplete="tel"
+                    />
+                  </div>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group message-group" [class.has-error]="messageControl?.touched && messageControl?.invalid">
+                  <label for="message" class="form-label">
+                    <span>Message :</span>
+                  </label>
+                  <div class="input-wrapper textarea-wrapper">
+                    <span class="input-icon textarea-icon">
+                      <i class="fa-regular fa-comment-dots"></i>
+                    </span>
+                    <textarea
+                      id="message"
+                      rows="4"
+                      class="custom-input custom-textarea"
+                      formControlName="message"
+                      placeholder="Write your message or inquiry here..."
+                    ></textarea>
+                  </div>
+                  <div
+                    class="field-error"
+                    *ngIf="messageControl?.touched && messageControl?.invalid"
+                  >
+                    <span *ngIf="messageControl?.errors?.['required']">Please enter a message.</span>
+                    <span *ngIf="messageControl?.errors?.['minlength']">Message should be at least 10 characters long.</span>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-action">
+                  <button
+                    type="submit"
+                    class="btn-send"
+                    [disabled]="isSubmitting"
+                  >
+                    <span *ngIf="!isSubmitting">Send Message</span>
+                    <span *ngIf="isSubmitting">Sending...</span>
+                    <i
+                      *ngIf="!isSubmitting"
+                      class="fa-solid fa-paper-plane send-icon"
+                    ></i>
+                    <i
+                      *ngIf="isSubmitting"
+                      class="fa-solid fa-spinner fa-spin send-icon"
+                    ></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

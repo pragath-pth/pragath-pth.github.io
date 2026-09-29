@@ -10,14 +10,18 @@
         color: var(--primary-text-color);
         .header-container{
             height: 70px;
+            flex: 0 0 70px;
             box-shadow: 0 4px 24px #22292f1a;
         }
         .router-container{
-            flex-grow: 1;
-            overflow: auto;
+            flex: 1 1 auto;
+            min-height: 0;
+            overflow-y: auto;
+            scrollbar-gutter: stable;
         }
         .footer-container{
             height: 50px;
+            flex: 0 0 50px;
         }
     }
     .dark-mode{

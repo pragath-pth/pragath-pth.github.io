@@ -1,13 +1,12 @@
-import { Component, DestroyRef, OnDestroy, OnInit, signal } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Component, DestroyRef, ElementRef, OnInit, signal, ViewChild } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { Header } from './shared/components/header/header';
 import { Footer } from './shared/components/footer/footer';
 import { Meta } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { map, Subscription } from 'rxjs';
+import { filter, map } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ThemeService } from './shared/services/theme-service';
-
 
 @Component({
   imports: [RouterOutlet, Header, Footer, CommonModule],
@@ -16,6 +15,8 @@ import { ThemeService } from './shared/services/theme-service';
   templateUrl: './app.html',
 })
 export class App implements OnInit {
+  @ViewChild('routerContainer') routerContainer?: ElementRef<HTMLDivElement>;
+
   protected readonly title = signal('pragath-pth');
   isDarkMode: boolean = false;
 
@@ -27,5 +28,16 @@ export class App implements OnInit {
     this.themeService.currentTheme.pipe(map(theme => theme === 'dark'),takeUntilDestroyed(this.destroyRef)).subscribe(isDark => {
       this.isDarkMode = isDark;
     });
+
+    this.router.events
+      .pipe(
+        filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe(() => {
+        if (this.routerContainer?.nativeElement) {
+          this.routerContainer.nativeElement.scrollTop = 0;
+        }
+      });
   }
 }

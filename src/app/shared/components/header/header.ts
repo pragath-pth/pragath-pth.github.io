@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, DestroyRef, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { ThemeService } from '../../services/theme-service';
-import { map } from 'rxjs';
+import { filter, map } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   imports: [
-    CommonModule, FormsModule
+    CommonModule, FormsModule, RouterModule, RouterLink, RouterLinkActive
   ],
   selector: 'app-header',
   styleUrl: './header.scss',
@@ -49,11 +50,37 @@ export class Header implements OnInit {
     }
   ]
 
-  constructor(private themeService: ThemeService, private destroyRef: DestroyRef){ }
+  constructor(
+    private themeService: ThemeService,
+    private destroyRef: DestroyRef,
+    private router: Router
+  ){ }
 
   ngOnInit() {
     this.themeService.currentTheme.pipe(map(theme => theme === 'dark'),takeUntilDestroyed(this.destroyRef)).subscribe(isDark => {
       this.isDarkMode = isDark;
+    });
+
+    this.updateActiveMenu(this.router.url);
+
+    this.router.events
+      .pipe(
+        filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe((e) => {
+        this.updateActiveMenu(e.urlAfterRedirects || e.url);
+      });
+  }
+
+  private updateActiveMenu(url: string) {
+    const cleanUrl = url.split('?')[0];
+    this.menuList.forEach((el: any) => {
+      if (el.menuRoute === '/') {
+        el.isActive = cleanUrl === '/' || cleanUrl === '';
+      } else {
+        el.isActive = cleanUrl === el.menuRoute || cleanUrl.startsWith(el.menuRoute + '/');
+      }
     });
   }
 
@@ -62,6 +89,7 @@ export class Header implements OnInit {
       el['isActive'] = false;
     });
     this.menuList[index].isActive = true;
+    this.router.navigate([this.menuList[index].menuRoute]);
   }
 
   switchThemeMode(){
