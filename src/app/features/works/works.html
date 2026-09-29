@@ -1,0 +1,644 @@
+<div class="works-page">
+  <div class="works-wrapper">
+    <!-- Top Hero / Header Section -->
+    <div class="header-section">
+      <div class="badge">
+        <span class="dot"></span>
+        <span>Featured Works • Production Showcase &amp; Case Studies</span>
+      </div>
+      <h1 class="page-title">Featured Works</h1>
+      <p class="page-subtitle">
+        A curated presentation of enterprise-grade web applications, frontend architectures, and developer tools built with modern frameworks and cloud ecosystems.
+      </p>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="quick-stats-ribbon">
+        <div class="stat-pill" *ngFor="let stat of projectMetrics">
+          <i [class]="stat.icon + ' stat-icon'"></i>
+          <span class="stat-label">{{ stat.label }}:</span>
+          <span class="stat-value">{{ stat.value }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flagship Project Hero Bento Showcase: TechSource -->
+    <div class="flagship-section">
+      <div class="flagship-card">
+        <div class="card-glow"></div>
+
+        <!-- Card Top Bar -->
+        <div class="flagship-top-bar">
+          <div class="dimension-pill">
+            <i class="fa-solid fa-fire-flame-curved pill-icon"></i>
+            <span class="pill-label">FLAGSHIP PROJECT</span>
+            <span class="pill-divider">•</span>
+            <span class="pill-desc">Web Platform</span>
+          </div>
+
+          <div class="top-status-group">
+            <div class="status-indicator">
+              <span class="pulse-dot"></span>
+              <span>Production Live</span>
+            </div>
+            <span class="platform-badge">Web • Windows • Android</span>
+          </div>
+        </div>
+
+        <!-- Main Hero Layout: Two Columns -->
+        <div class="flagship-body">
+          <!-- Left Column: Project Overview & Narrative -->
+          <div class="flagship-info">
+            <div class="project-identity">
+              <div class="logo-box">
+                <i class="fa-solid fa-cubes-stacked"></i>
+              </div>
+              <div class="identity-text">
+                <div class="title-row">
+                  <h2 class="project-title">TechSource</h2>
+                  <span class="version-tag">v2.0 • Active</span>
+                </div>
+                <p class="project-tagline">"One Place For Tech Related Resources &amp; Links"</p>
+              </div>
+            </div>
+
+            <p class="project-narrative">
+              <strong>TechSource</strong> is an intuitive single-page web ecosystem designed to eliminate scattered software downloads, outdated installation files, and untrusted links. It provides developers, IT professionals, and power users with a unified, verified catalog of essential applications, developer toolchains, and technical bookmarks.
+            </p>
+
+            <!-- Highlights Checklist -->
+            <div class="key-highlights-grid">
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check item-check"></i>
+                <div class="item-content">
+                  <span class="item-title">Windows Software Catalog</span>
+                  <span class="item-desc">Curated essential and recommended utilities, dev packages, and productivity suites.</span>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check item-check"></i>
+                <div class="item-content">
+                  <span class="item-title">Android Ecosystem Hub</span>
+                  <span class="item-desc">Verified mobile software, APKs, developer utilities, and customization tools.</span>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check item-check"></i>
+                <div class="item-content">
+                  <span class="item-title">Cloud Firestore Real-Time DB</span>
+                  <span class="item-desc">Real-time NoSQL cloud data storage with live synchronization and zero downtime.</span>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check item-check"></i>
+                <div class="item-content">
+                  <span class="item-title">PrimeNG Enterprise Data Tables</span>
+                  <span class="item-desc">Column sorting, dropdown filtering by choice tier, and responsive modal dialogs.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons-group">
+              <a
+                href="https://pragathpth.me/techsource/#/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >
+                <span>Launch Live Application</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+
+              <a
+                href="https://pragathpth.me/techsource/#/windows"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+              >
+                <i class="fa-brands fa-windows"></i>
+                <span>Windows Hub</span>
+              </a>
+
+              <a
+                href="https://pragathpth.me/techsource/#/android"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+              >
+                <i class="fa-brands fa-android"></i>
+                <span>Android Hub</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Simulated UI Preview -->
+          <div class="flagship-preview">
+            <div class="browser-frame">
+              <!-- Window Chrome Header -->
+              <div class="browser-chrome">
+                <div class="traffic-lights">
+                  <span class="light red"></span>
+                  <span class="light yellow"></span>
+                  <span class="light green"></span>
+                </div>
+                <div class="browser-url-bar">
+                  <i class="fa-solid fa-lock url-lock"></i>
+                  <span class="url-text">https://pragathpth.me/techsource/#/{{ activeMockupTab === 'modal' ? 'windows?modal=true' : activeMockupTab }}</span>
+                </div>
+                <div class="browser-actions">
+                  <i class="fa-solid fa-rotate-right refresh-icon"></i>
+                </div>
+              </div>
+
+              <!-- Interactive Mockup Navigation Ribbon -->
+              <div class="mockup-nav-bar">
+                <div class="mockup-brand">
+                  <i class="fa-solid fa-cubes-stacked brand-icon"></i>
+                  <span>TechSource</span>
+                </div>
+                <div class="mockup-tabs">
+                  <button
+                    type="button"
+                    class="mockup-tab-btn"
+                    [class.active]="activeMockupTab === 'windows'"
+                    (click)="setMockupTab('windows')"
+                  >
+                    <i class="fa-brands fa-windows"></i>
+                    <span>Windows</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="mockup-tab-btn"
+                    [class.active]="activeMockupTab === 'android'"
+                    (click)="setMockupTab('android')"
+                  >
+                    <i class="fa-brands fa-android"></i>
+                    <span>Android</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="mockup-tab-btn"
+                    [class.active]="activeMockupTab === 'table'"
+                    (click)="setMockupTab('table')"
+                  >
+                    <i class="fa-solid fa-table-cells"></i>
+                    <span>Data Grid</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="mockup-tab-btn"
+                    [class.active]="activeMockupTab === 'modal'"
+                    (click)="setMockupTab('modal')"
+                  >
+                    <i class="fa-regular fa-window-maximize"></i>
+                    <span>App Modal</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Mockup Content Canvas -->
+              <div class="mockup-viewport">
+                <!-- Toast feedback simulator -->
+                <div class="mockup-toast" *ngIf="copiedLinkToast">
+                  <i class="fa-solid fa-check-circle toast-check"></i>
+                  <span>Download link copied to clipboard!</span>
+                </div>
+
+                <!-- View 1: Windows Apps Grid -->
+                <div class="view-cards" *ngIf="activeMockupTab === 'windows'">
+                  <div class="view-header">
+                    <div class="tier-pills">
+                      <span class="tier-pill active">
+                        <span class="status-dot green"></span> Necessary Apps (Essential)
+                      </span>
+                      <span class="tier-pill">
+                        <span class="status-dot yellow"></span> Optional Apps
+                      </span>
+                    </div>
+                    <span class="view-meta">4 of 42 Items Shown</span>
+                  </div>
+
+                  <div class="cards-mini-grid">
+                    <div class="app-mini-card" *ngFor="let app of sampleWindowsApps">
+                      <div class="app-card-head">
+                        <div class="app-icon-wrap">
+                          <i [class]="app.icon"></i>
+                        </div>
+                        <div class="app-meta">
+                          <div class="app-title-line">
+                            <h4 class="app-name">{{ app.name }}</h4>
+                            <span class="status-dot" [ngClass]="app.type === 'necessary' ? 'green' : 'yellow'"></span>
+                          </div>
+                          <span class="app-ver">{{ app.version }} • {{ app.category }}</span>
+                        </div>
+                      </div>
+                      <p class="app-brief">{{ app.description }}</p>
+                      <div class="app-actions-row">
+                        <button type="button" class="mini-btn btn-dl" (click)="simulateCopy()" title="Download Application">
+                          <i class="fa-solid fa-download"></i>
+                          <span>Download</span>
+                        </button>
+                        <button type="button" class="mini-btn btn-copy" (click)="simulateCopy()" title="Copy direct link">
+                          <i class="fa-solid fa-paperclip"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- View 2: Android Apps Grid -->
+                <div class="view-cards" *ngIf="activeMockupTab === 'android'">
+                  <div class="view-header">
+                    <div class="tier-pills">
+                      <span class="tier-pill active">
+                        <span class="status-dot green"></span> Core Mobile Packages
+                      </span>
+                      <span class="tier-pill">
+                        <span class="status-dot yellow"></span> Power Utilities
+                      </span>
+                    </div>
+                    <span class="view-meta">Verified APKs</span>
+                  </div>
+
+                  <div class="cards-mini-grid">
+                    <div class="app-mini-card" *ngFor="let app of sampleAndroidApps">
+                      <div class="app-card-head">
+                        <div class="app-icon-wrap android-accent">
+                          <i [class]="app.icon"></i>
+                        </div>
+                        <div class="app-meta">
+                          <div class="app-title-line">
+                            <h4 class="app-name">{{ app.name }}</h4>
+                            <span class="status-dot" [ngClass]="app.type === 'necessary' ? 'green' : 'yellow'"></span>
+                          </div>
+                          <span class="app-ver">{{ app.version }} • {{ app.category }}</span>
+                        </div>
+                      </div>
+                      <p class="app-brief">{{ app.description }}</p>
+                      <div class="app-actions-row">
+                        <button type="button" class="mini-btn btn-dl" (click)="simulateCopy()" title="Download Application">
+                          <i class="fa-solid fa-download"></i>
+                          <span>Download APK</span>
+                        </button>
+                        <button type="button" class="mini-btn btn-copy" (click)="simulateCopy()" title="Copy direct link">
+                          <i class="fa-solid fa-paperclip"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- View 3: PrimeNG Data Grid View -->
+                <div class="view-table" *ngIf="activeMockupTab === 'table'">
+                  <div class="table-header-bar">
+                    <span class="table-title">PrimeNG Interactive Data Table (All Apps)</span>
+                    <div class="table-filters">
+                      <span class="filter-chip">
+                        <i class="fa-solid fa-filter"></i> Tier: All
+                      </span>
+                      <span class="filter-chip">
+                        <i class="fa-solid fa-arrow-down-a-z"></i> Sort: Name
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="simulated-table-wrap">
+                    <table class="simulated-table">
+                      <thead>
+                        <tr>
+                          <th>Application Name</th>
+                          <th>Category</th>
+                          <th>Tier</th>
+                          <th>Version</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="tbl-name-cell">
+                              <i class="fa-solid fa-code"></i>
+                              <span>Visual Studio Code</span>
+                            </div>
+                          </td>
+                          <td>Development</td>
+                          <td><span class="tbl-badge badge-green">Necessary</span></td>
+                          <td>v1.96.x</td>
+                          <td>
+                            <button type="button" class="tbl-link-btn" (click)="simulateCopy()">
+                              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="tbl-name-cell">
+                              <i class="fa-brands fa-git-alt"></i>
+                              <span>Git SCM</span>
+                            </div>
+                          </td>
+                          <td>Version Control</td>
+                          <td><span class="tbl-badge badge-green">Necessary</span></td>
+                          <td>v2.48.x</td>
+                          <td>
+                            <button type="button" class="tbl-link-btn" (click)="simulateCopy()">
+                              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="tbl-name-cell">
+                              <i class="fa-solid fa-paper-plane"></i>
+                              <span>Postman Desktop</span>
+                            </div>
+                          </td>
+                          <td>API Testing</td>
+                          <td><span class="tbl-badge badge-yellow">Optional</span></td>
+                          <td>v11.x</td>
+                          <td>
+                            <button type="button" class="tbl-link-btn" (click)="simulateCopy()">
+                              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="tbl-name-cell">
+                              <i class="fa-solid fa-file-zipper"></i>
+                              <span>7-Zip</span>
+                            </div>
+                          </td>
+                          <td>Compression</td>
+                          <td><span class="tbl-badge badge-green">Necessary</span></td>
+                          <td>v24.09</td>
+                          <td>
+                            <button type="button" class="tbl-link-btn" (click)="simulateCopy()">
+                              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- View 4: App Details Modal View -->
+                <div class="view-modal" *ngIf="activeMockupTab === 'modal'">
+                  <div class="simulated-dialog">
+                    <div class="dialog-top">
+                      <div class="dialog-title-wrap">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>App Details • Inspector Dialog</span>
+                      </div>
+                      <div class="dialog-controls">
+                        <i class="fa-solid fa-window-minimize"></i>
+                        <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                      </div>
+                    </div>
+
+                    <div class="dialog-body">
+                      <div class="dialog-head-row">
+                        <div class="dialog-avatar">
+                          <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div class="dialog-identity">
+                          <h4 class="dialog-app-name">Visual Studio Code</h4>
+                          <span class="dialog-app-version">Version : v1.96.2 • Stable Release</span>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="simulateCopy()">
+                          <i class="fa-solid fa-download"></i>
+                          <span>Download</span>
+                        </button>
+                      </div>
+
+                      <div class="dialog-section">
+                        <h6 class="dialog-subhead">Application Overview</h6>
+                        <p class="dialog-text">
+                          High-performance source-code editor developed by Microsoft for Windows, Linux, and macOS. Features comprehensive tooling for modern web engineering, TypeScript support, and an extensive marketplace.
+                        </p>
+                      </div>
+
+                      <div class="dialog-section">
+                        <h6 class="dialog-subhead">Tags &amp; Taxonomy</h6>
+                        <div class="dialog-tags">
+                          <span class="dialog-tag">Development</span>
+                          <span class="dialog-tag">TypeScript</span>
+                          <span class="dialog-tag">Editor</span>
+                          <span class="dialog-tag">Essential</span>
+                          <span class="dialog-tag">Cross-Platform</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mockup Footer Info -->
+              <div class="browser-footer">
+                <span class="footer-note">
+                  <i class="fa-solid fa-info-circle"></i> Click tabs above to simulate TechSource modules in this preview.
+                </span>
+                <a href="https://pragathpth.me/techsource/#/home" target="_blank" rel="noopener noreferrer" class="footer-link">
+                  Open actual app <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Architectural Deep Dive: Bento Grid -->
+    <div class="architecture-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-badge">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Engineering Highlights</span>
+          </div>
+          <h2 class="section-heading">Architectural Pillars &amp; System Design</h2>
+          <p class="section-subheading">
+            How TechSource is engineered under the hood — from modular Angular client routes to real-time Google Cloud Firestore and enterprise PrimeNG data management.
+          </p>
+        </div>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card" *ngFor="let pillar of architecturalPillars" [ngClass]="pillar.accentClass">
+          <div class="pillar-glow"></div>
+          
+          <div class="pillar-top">
+            <div class="pillar-badge">{{ pillar.badge }}</div>
+            <div class="pillar-icon-box">
+              <i [class]="pillar.icon"></i>
+            </div>
+          </div>
+
+          <h3 class="pillar-title">{{ pillar.title }}</h3>
+          <p class="pillar-desc">{{ pillar.description }}</p>
+
+          <ul class="pillar-list">
+            <li *ngFor="let item of pillar.highlights">
+              <i class="fa-solid fa-check check-icon"></i>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+
+          <div class="pillar-tags">
+            <span class="tech-tag" *ngFor="let tag of pillar.techTags">{{ tag }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Problem & Solution Breakdown Bento -->
+    <div class="problem-solution-section">
+      <div class="ps-card card-challenge">
+        <div class="ps-header">
+          <div class="ps-icon-wrap challenge-accent">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <div>
+            <span class="ps-label">THE CHALLENGE</span>
+            <h3 class="ps-title">Fragmented Software &amp; Setup Friction</h3>
+          </div>
+        </div>
+        <p class="ps-desc">
+          Setting up new workstations or hunting for reliable utilities often forces users into deceptive search ads, bundled bloatware, broken mirrors, and uncertain software versions across scattered portals.
+        </p>
+        <ul class="ps-points">
+          <li>
+            <i class="fa-solid fa-xmark point-icon red"></i>
+            <span>Scattered download links with misleading ad wrappers</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-xmark point-icon red"></i>
+            <span>No clear distinction between essential vs. optional software</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-xmark point-icon red"></i>
+            <span>Tedious repetitive setup following fresh OS installations</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ps-card card-solution">
+        <div class="ps-header">
+          <div class="ps-icon-wrap solution-accent">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <span class="ps-label">THE TECHSOURCE SOLUTION</span>
+            <h3 class="ps-title">Curated, Verified &amp; Real-Time Hub</h3>
+          </div>
+        </div>
+        <p class="ps-desc">
+          TechSource serves as a single source of truth, offering verified links, transparent versioning, tier-based Necessary/Optional organization, and 1-click clipboard sharing for lightning-fast PC configuration.
+        </p>
+        <ul class="ps-points">
+          <li>
+            <i class="fa-solid fa-check point-icon green"></i>
+            <span>Direct, verified downloads without malware or redirect traps</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-check point-icon green"></i>
+            <span>Color-coded tier classification (Green: Essential, Yellow: Optional)</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-check point-icon green"></i>
+            <span>Real-time Firebase Firestore data updates without client redeployment</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Technology Matrix & Tools Used -->
+    <div class="tech-matrix-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-badge">
+            <i class="fa-solid fa-microchip"></i>
+            <span>Technologies Leveraged</span>
+          </div>
+          <h2 class="section-heading">TechSource Technology Stack</h2>
+          <p class="section-subheading">
+            Frameworks, libraries, cloud databases, and development tooling powering the TechSource ecosystem.
+          </p>
+        </div>
+      </div>
+
+      <div class="tech-badges-grid">
+        <div class="tech-badge-item" *ngFor="let tech of techStackBadges">
+          <div class="badge-icon-box">
+            <i [class]="tech.icon"></i>
+          </div>
+          <div class="badge-text">
+            <h4 class="tech-name">{{ tech.name }}</h4>
+            <span class="tech-role">{{ tech.category }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Future Pipeline / In Development Teaser Card -->
+    <!-- <div class="pipeline-section">
+      <div class="pipeline-card">
+        <div class="pipeline-left">
+          <div class="pipeline-badge">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span>Roadmap &amp; In Development</span>
+          </div>
+          <h3 class="pipeline-title">More Projects in Active Development</h3>
+          <p class="pipeline-desc">
+            Currently engineering next-generation enterprise Angular web applications, real-time analytics dashboards with AG Grid &amp; amCharts, and ASP.NET Core backend microservices. Case studies will be published as milestones are completed.
+          </p>
+        </div>
+        <div class="pipeline-right">
+          <div class="pipeline-spec">
+            <div class="spec-bullet">
+              <span class="bullet-dot"></span>
+              <span>Enterprise Data Analytics Dashboard (AG Grid + Signals)</span>
+            </div>
+            <div class="spec-bullet">
+              <span class="bullet-dot"></span>
+              <span>ASP.NET Core 8 Web API Microservice Architecture</span>
+            </div>
+            <div class="spec-bullet">
+              <span class="bullet-dot"></span>
+              <span>Modern Design System Component Library</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Call to Action Banner -->
+    <div class="cta-banner">
+      <div class="cta-content">
+        <div class="cta-text">
+          <h3 class="cta-title">Interested in discussing this project or building something similar?</h3>
+          <p class="cta-desc">
+            Whether you need modern Angular frontend architecture, rich data management interfaces, or clean API integrations, let's connect and build something extraordinary.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a routerLink="/contact" class="btn btn-primary">
+            <span>Get In Touch</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a
+            href="https://pragathpth.me/techsource/#/home"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            <span>Launch TechSource</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

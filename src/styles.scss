@@ -1,11 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+@use 'variables.scss' as *;
+@use 'bootstrap/scss/bootstrap';
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css" layer(bootstrap);
 
-*{
-    font-family: 'Nunito';
+@font-face {
+    font-family: "Nunito"; // 400
+    src: url('../public/assets/fonts/Nunito/Nunito-Regular.ttf') format("opentype");
+    font-weight: 400;
 }
-/* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+
+@font-face {
+    font-family: "Nunito"; // 200
+    src: url('../public/assets/fonts/Nunito/Nunito-ExtraLight.ttf') format("opentype");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Nunito"; // 300
+    src: url('../public/assets/fonts/Nunito/Nunito-Light.ttf') format("opentype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Nunito"; // 500
+    src: url('../public/assets/fonts/Nunito/Nunito-Medium.ttf') format("opentype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Nunito"; // 600
+    src: url('../public/assets/fonts/Nunito/Nunito-SemiBold.ttf') format("opentype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Nunito"; // 700
+    src: url('../public/assets/fonts/Nunito/Nunito-Bold.ttf') format("opentype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Nunito"; // 800
+    src: url('../public/assets/fonts/Nunito/Nunito-ExtraBold.ttf') format("opentype");
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: "Nunito"; // 900
+    src: url('../public/assets/fonts/Nunito/Nunito-Black.ttf') format("opentype");
+    font-weight: 900;
+}
+
+* {
+    font-family: "Nunito";
+}
+
+body {
+    margin: 0;
+}
+
+#p-license-host {
+    display: none !important;
+}

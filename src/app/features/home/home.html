@@ -1,0 +1,51 @@
+<div class="home">
+    <div class="content">
+        <div class="info-container">
+            <p class="greeting">Hey There !</p>
+            <h1 class="myself">
+                I'm Pragath, a software developer specializing in modern web technologies. 
+            </h1>
+            <div class="badge">
+                <span class="dot"></span>
+                <span>Angular Developer • UI Enthusiast</span>
+            </div>
+            <p class="description">
+                I craft responsive, accessible UIs with Angular, TypeScript, and clean design systems. From micro-interactions to scalable architectures, I bring ideas to life with precision and polish.
+            </p>
+            <div class="connect-container">
+                <h2 class="header-txt">Connect</h2>
+                <div class="connect-list-container">
+                    <div 
+                        class="connect-item" 
+                        *ngFor="let item of connectionList; let i = index;" 
+                        (click)="openConnectURL(i)"
+                        (keydown.enter)="openConnectURL(i)"
+                        (keydown.space)="openConnectURL(i); $event.preventDefault()"
+                        tabindex="0"
+                        role="button"
+                        [attr.aria-label]="'Connect on ' + item?.connectName">
+                        <span class="item-icon">
+                            <i [class]="item?.connectIcon"></i>
+                        </span>
+                        <span class="item-name">{{item?.connectName}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portrait-container">
+            <div class="portrait-wrapper">
+                <img class="portrait" src="assets/images/profile.jpg" alt="Pragath - Software Developer" loading="eager">
+            </div>
+            <div class="socials">
+                <a class="chip" href="https://instagram.com/pragath_pth" target="_blank" rel="noreferrer" aria-label="Instagram profile @pragath_pth">
+                    <i class="fa-brands fa-instagram chip-icon"></i>
+                    <span>@pragath_pth</span>
+                </a>
+                <a class="chip" href="https://maps.app.goo.gl/zieq1tpyViJ4k2zf9" target="_blank" rel="noreferrer" aria-label="Location Kollam, Kerala, India">
+                    <i class="fa-solid fa-location-dot chip-icon"></i>
+                    <span>Kollam, Kerala, India • IST</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
